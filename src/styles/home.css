@@ -1,0 +1,470 @@
+.home-bg {
+  display: flex;
+  min-height: 100vh;
+  background: #111;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Sidebar */
+.home-sidebar {
+  width: 110px;
+  background: #111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  padding: 0;
+  z-index: 10;
+}
+
+.home-logo {
+  margin-top: 28px;
+  margin-bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.home-logo img {
+  height: 38px;
+  margin-bottom: 0;
+}
+
+/* Centralizar botões verticalmente */
+.home-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 120px;
+  margin-bottom: 0;
+  align-items: center;
+}
+
+.home-nav-btn {
+  background: #181818;
+  border: none;
+  border-radius: 16px;
+  width: 56px;
+  height: 56px;
+  color: #b6ff3b;
+  font-size: 1.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: none;
+}
+
+.home-nav-btn.active, .home-nav-btn:hover {
+  background: #b6ff3b;
+  color: #111;
+}
+
+.home-nav-img {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+.home-nav-btn.active .home-nav-img {
+  filter: none;
+}
+
+.home-nav-btn:not(.active) .home-nav-img {
+  filter: grayscale(1) brightness(0.7);
+}
+
+.home-user {
+  color: #aaa;
+  font-size: 13px;
+  margin-bottom: 22px;
+  text-align: left;
+  width: 100%;
+  padding-left: 14px;
+  padding-bottom: 18px;
+  position: static;
+  white-space: nowrap;          /* Mantém tudo em uma linha */
+}
+
+.home-user-email {
+  color: #b6ff3b;
+  font-size: 14px;
+  word-break: normal;           /* Não quebra a palavra */
+  display: inline;              /* Fica na mesma linha do texto acima */
+  margin-left: 6px;
+}
+
+/* Main content */
+.home-main {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0;
+  margin-left: 110px; /* espaço para sidebar fixa */
+  width: calc(100vw - 110px);
+  min-height: 100vh;
+  background: #111;
+}
+
+.home-content {
+  background: #181818;
+  border-radius: 40px;
+  padding: 32px;
+  width: 100%;
+  max-width: 1110px;
+  max-height: 628px;
+  min-height: 300px;
+  box-sizing: border-box;
+  margin: 48px 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Impede rolagem vertical */
+}
+
+.home-content,
+.home-list,
+.home-list-container {
+  overflow: visible !important;
+}
+
+.home-list,
+.home-list-container {
+  overflow: hidden !important; /* Garante que não haverá rolagem interna */
+}
+
+.home-content h2 {
+  color: #fff;
+  font-size: 2.2rem;
+  margin-bottom: 32px;
+  font-weight: 700;
+  margin-left: 8px;
+}
+
+.home-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.home-search {
+  background: #222;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 22px;
+  color: #fff;
+  font-size: 1rem;
+  width: 320px;
+  margin-right: 8px;
+}
+
+.home-add-btn {
+  background: #b6ff3b;
+  color: #111;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 28px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  margin-left: 8px;
+  box-shadow: 0 2px 8px #0002;
+}
+
+.home-list {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Menor gap para caber mais itens */
+  min-height: 0; /* Permite o flex encolher */
+  overflow-y: auto;
+}
+
+.home-list-container {
+  display: flex;
+  flex-direction: row;
+  gap: 24px; /* Menor gap lateral */
+  margin-top: 0;
+  min-height: 0;
+  flex: 1 1 auto;
+}
+
+.home-list-title,
+.home-list-item {
+  min-width: 0;
+}
+
+.home-list-title {
+  margin-bottom: 6px;
+  padding-bottom: 4px;
+}
+
+.home-list-item {
+  padding: 10px 0;
+}
+
+.home-alphabet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #d4ff3b;
+  border-radius: 24px;
+  padding: 16px 0;
+  min-width: 56px;
+  max-height: 480px;      /* altura máxima */
+  overflow-y: auto;       /* rolagem só aqui */
+  margin-right: 32px;
+  box-shadow: 0 2px 12px #0002;
+  scrollbar-width: none;      /* Firefox */
+  -ms-overflow-style: none;   /* IE e Edge */
+}
+
+.home-alphabet::-webkit-scrollbar {
+  display: none;              /* Chrome, Safari e Opera */
+}
+
+.home-letter {
+  color: #111;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 7px 0;
+  width: 100%;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 2px;
+  transition: background 0.2s, color 0.2s;
+  letter-spacing: 1px;
+}
+
+.home-letter.active {
+  background: #111;
+  color: #b6ff3b;
+}
+
+/* Lista de contatos */
+.home-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.home-list-title {
+  display: grid;
+  grid-template-columns: 2.5fr 1.5fr 2.5fr 1fr;
+  color: #aaa;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-bottom: 2px solid #222;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.home-list-item {
+  display: grid;
+  grid-template-columns: 60px 2.5fr 1.5fr 2.5fr 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 0;
+  border-bottom: 1px solid #222;
+}
+
+.home-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 8px;
+  background: #222;
+}
+
+.home-contact-name {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.home-contact-type {
+  color: #aaa;
+  font-size: 1rem;
+}
+
+.home-contact-phone,
+.home-contact-email {
+  color: #fff;
+  font-size: 1.05rem;
+}
+
+.home-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.home-edit-btn,
+.home-lock-btn,
+.home-delete-btn {
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 7px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-edit-btn {
+  border: 1px solid #444;
+  font-size: 0.98rem;
+  padding: 7px 18px;
+}
+
+.home-edit-btn:hover {
+  background: #b6ff3b;
+  color: #111;
+}
+.home-lock-btn,
+.home-delete-btn {
+  padding: 7px 12px;
+  background: #222;
+}
+
+.home-lock-btn:hover,
+.home-delete-btn:hover {
+  background: #ff3b3b;
+  color: #fff;
+}
+
+/* Modal overlay cobrindo toda a tela */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.7);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(6px);
+}
+
+/* Modal centralizado */
+.modal-content {
+  position: relative;
+  background: #181818;
+  border-radius: 28px;
+  padding: 36px 32px 28px 32px;
+  width: 400px;
+  color: #fff;
+  box-shadow: 0 8px 32px #000a;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  z-index: 100000;
+}
+
+/* Botão de fechar */
+.modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Avatar e botão de foto */
+.modal-avatar-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.modal-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: #222;
+  object-fit: cover;
+  margin-bottom: 6px;
+}
+.modal-photo-btn {
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Inputs e labels */
+.modal-content label {
+  margin-top: 8px;
+  font-weight: 600;
+  color: #fff;
+}
+.modal-content input {
+  width: 100%;
+  background: #222;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: #fff;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+/* Ações do modal */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 18px;
+}
+.modal-cancel {
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.modal-save {
+  background: #b6ff3b;
+  color: #111;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 24px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+body.modal-open {
+  overflow: hidden !important;
+}
+
+  body, html {
+  overflow-x: hidden;
+  /* overflow: hidden; */
+  /* overflow-y: hidden !important; Impede rolagem vertical global */
+  }

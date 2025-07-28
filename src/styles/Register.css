@@ -1,0 +1,123 @@
+body, html, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.register-container {
+  display: flex;
+  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
+  background: #111;
+  margin: 0;
+  padding: 0;
+}
+
+.register-left {
+  flex: 1;
+  background: url("../../images/fundo.png") no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.register-logo {
+  padding: 32px;
+}
+
+.register-logo img {
+  height: 32px;
+}
+
+.register-right {
+  width: 480px;
+  background: #181818;
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.register-access {
+  position: absolute;
+  top: 32px;
+  right: 40px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.register-link {
+  color: #b6ff3b;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.register-right h2 {
+  color: #fff;
+  margin-bottom: 32px;
+  margin-top: 32px;
+}
+
+.register-field {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.register-field label {
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.register-field input {
+  width: 94%;
+  padding: 12px;
+  background: #222;
+  border: 1px solid #333;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.register-validations {
+  margin-bottom: 24px;
+}
+
+.register-validations .valid,
+.register-validations .invalid {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+  font-size: 15px;
+}
+
+.register-validations .valid {
+  color: #b6ff3b;
+}
+
+.register-validations .invalid {
+  color: #ff3b3b;
+}
+
+.register-btn {
+  background: #b6ff3b;
+  color: #111;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 32px;
+  font-weight: 600;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 8px;
+  float: right;
+  transition: opacity 0.2s;
+}
+
+.register-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
